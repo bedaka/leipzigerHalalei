@@ -13,7 +13,7 @@ for (var r in resources) {
 
 var ball = new ex.Actor(game.drawWidth / 2, game.drawHeight - 50, 100, 100);
 
-ball.color = ex.Color.Yellow;
+ball.color = ex.Color.Red;
 
 game.input.pointers.primary.on('move', function(evt){
   if(evt.x >= 50 && evt.x <= game.drawWidth - 50){
