@@ -13,23 +13,30 @@ var Player = /** @class */ (function (_super) {
     __extends(Player, _super);
     function Player() {
         var _this = _super.call(this) || this;
+        _this.size = game.drawWidth / 10; //game.drawWidth / 10;
         _this.xPos = game.drawWidth / 2;
-        _this.yPos = game.drawHeight - game.drawHeight / 20;
+        _this.yPos = game.drawHeight - _this.size - game.drawHeight / 100;
         return _this;
     }
     Player.prototype.onInitialize = function (engine) {
-        this.x = this.xPos;
-        this.y = this.yPos;
-        this.setWidth(100);
-        this.setHeight(100);
+        this.pos.x = this.xPos;
+        this.pos.y = this.yPos;
+        this.setWidth(this.size);
+        this.setHeight(this.size);
         this.color = ex.Color.Yellow;
+    };
+    Player.prototype.move = function (e) {
+        this.pos.x = e.x;
+    };
+    Player.prototype.updade = function (engine, delta) {
+        _super.prototype.update.call(this, engine, delta);
     };
     return Player;
 }(ex.Actor));
 /// <reference path="../node_modules/excalibur/dist/excalibur.d.ts" />
 var game = new ex.Engine({
-    width: 500,
-    height: 1000
+    width: 400,
+    height: 600,
 });
 // create an asset loader
 var loader = new ex.Loader();
@@ -41,8 +48,12 @@ var resources = {
 for (var r in resources) {
     loader.addResource(resources[r]);
 }
+game.canvas.hideFocus = true;
 var p = new Player();
 game.add(p);
+game.input.pointers.primary.on('move', function (e) {
+    p.move(e);
+});
 // uncomment loader after adding resources
 game.start( /* loader */).then(function () {
     // start your game!

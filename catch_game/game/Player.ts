@@ -6,16 +6,30 @@ class Player extends ex.Actor{
       super();
     }
 
+    public size = game.drawWidth / 10; //game.drawWidth / 10;
     public xPos = game.drawWidth / 2;
-    public yPos = game.drawHeight - game.drawHeight / 20;
+    public yPos = game.drawHeight - this.size - game.drawHeight / 100;
 
     public onInitialize(engine: ex.Engine){
-        this.x = this.xPos;
-        this.y = this.yPos;
-        this.setWidth(100);
-        this.setHeight(100);
+
+        this.pos.x = this.xPos;
+        this.pos.y = this.yPos;
+        this.setWidth(this.size);
+        this.setHeight(this.size);
 
         this.color = ex.Color.Yellow;
+
+    }
+
+    public move(e: ex.Input.PointerEvent){
+        this.pos.x = e.x;
+    }
+
+    public updade(engine: ex.Engine, delta: number){
+        super.update(engine, delta);
+
+
+
     }
 
 }
