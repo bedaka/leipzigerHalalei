@@ -12,6 +12,7 @@ for (var r in resources) {
 }
 
 
+
 // uncomment loader after adding resources
 game.start().then(function () {
     // start your game!
