@@ -13,9 +13,9 @@ var Player = /** @class */ (function (_super) {
     __extends(Player, _super);
     function Player() {
         var _this = _super.call(this) || this;
-        _this.size = game.drawWidth / 10; //game.drawWidth / 10;
-        _this.xPos = game.drawWidth / 2;
-        _this.yPos = game.drawHeight - _this.size - game.drawHeight / 100;
+        _this.size = game.canvas.width / 10; //game.canvas.width / 10;
+        _this.xPos = game.canvas.width / 2;
+        _this.yPos = game.canvas.height - _this.size - game.canvas.height / 100;
         return _this;
     }
     Player.prototype.onInitialize = function (engine) {
@@ -26,7 +26,15 @@ var Player = /** @class */ (function (_super) {
         this.color = ex.Color.Yellow;
     };
     Player.prototype.move = function (e) {
-        this.pos.x = e.x;
+        if (!(e.worldPos.x > 0 + this.size / 2)) {
+            this.pos.x = this.size / 2;
+        }
+        else if (!(e.worldPos.x < game.canvas.width - this.size / 2)) {
+            this.pos.x = game.canvas.width - this.size / 2;
+        }
+        else {
+            this.pos.x = e.worldPos.x;
+        }
     };
     Player.prototype.updade = function (engine, delta) {
         _super.prototype.update.call(this, engine, delta);
@@ -35,26 +43,27 @@ var Player = /** @class */ (function (_super) {
 }(ex.Actor));
 /// <reference path="../node_modules/excalibur/dist/excalibur.d.ts" />
 var game = new ex.Engine({
-    width: 400,
-    height: 600,
+    suppressHiDPIScaling: true,
+    displayMode: ex.DisplayMode.Container,
+    canvasElementId: "gCanvas",
 });
+game.canvas.height = 600;
+game.canvas.width = 400;
 // create an asset loader
 var loader = new ex.Loader();
-var resources = {
-/* include resources here */
-//txPlayer: new ex.Texture("assets/tex/player.png")
-};
-// queue resources for loading
+var resources = {};
 for (var r in resources) {
     loader.addResource(resources[r]);
 }
-game.canvas.hideFocus = true;
-var p = new Player();
-game.add(p);
-game.input.pointers.primary.on('move', function (e) {
-    p.move(e);
-});
+/*game.canvas.width = 400;
+game.canvas.height = 600;*/
+var a = new ex.Actor(10, 10, 10, 10, ex.Color.Black);
+game.add(a);
 // uncomment loader after adding resources
 game.start( /* loader */).then(function () {
-    // start your game!
+    var p = new Player();
+    game.add(p);
+    game.input.pointers.primary.on('move', function (e) {
+        p.move(e);
+    });
 });

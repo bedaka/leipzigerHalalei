@@ -6,9 +6,9 @@ class Player extends ex.Actor{
       super();
     }
 
-    public size = game.drawWidth / 10; //game.drawWidth / 10;
-    public xPos = game.drawWidth / 2;
-    public yPos = game.drawHeight - this.size - game.drawHeight / 100;
+    public size = game.canvas.width / 10; //game.canvas.width / 10;
+    public xPos = game.canvas.width / 2;
+    public yPos = game.canvas.height - this.size - game.canvas.height / 100;
 
     public onInitialize(engine: ex.Engine){
 
@@ -22,7 +22,14 @@ class Player extends ex.Actor{
     }
 
     public move(e: ex.Input.PointerEvent){
-        this.pos.x = e.x;
+      if(!(e.worldPos.x > 0 + this.size / 2)){
+          this.pos.x = this.size / 2;
+      }else if(!(e.worldPos.x < game.canvas.width - this.size / 2)){
+          this.pos.x = game.canvas.width - this.size / 2
+      }else{
+          this.pos.x = e.worldPos.x;
+      }
+
     }
 
     public updade(engine: ex.Engine, delta: number){
