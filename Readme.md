@@ -1,3 +1,3 @@
-# Leipziger Halalei
+# leipzigerHalalei
 
-Andi, Bene, Luca, Kodjo, Kobi
+Tritt ein in die wunderbare Welt des Döners!

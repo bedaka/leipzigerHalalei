@@ -4,13 +4,11 @@
 
 var game = new ex.Engine({
 
-    suppressHiDPIScaling: true,
-    displayMode: ex.DisplayMode.Container,
-    canvasElementId: "gCanvas",
+    displayMode: ex.DisplayMode.Fixed,
+    height: 600,
+    width: 400
   });
 
-  game.canvas.height = 600;
-  game.canvas.width = 400;
 
 
 // create an asset loader
@@ -23,15 +21,9 @@ for (var r in resources) {
     loader.addResource(resources[r]);
 }
 
-/*game.canvas.width = 400;
-game.canvas.height = 600;*/
-
-var a = new ex.Actor(10,10,10,10, ex.Color.Black);
-game.add(a);
 
 // uncomment loader after adding resources
 game.start(/* loader */).then(() => {
-
 
   var p = new Player();
   game.add(p);
