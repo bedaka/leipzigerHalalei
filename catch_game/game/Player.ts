@@ -2,27 +2,25 @@
 
 class Player extends ex.Actor{
 
+  public size = game.drawWidth / 10;
+
     constructor(){
       super();
-    }
 
-    public size = game.drawWidth / 10; //game.drawWidth / 10;
-    public xPos = game.drawWidth / 2;
-    public yPos = game.drawHeight - this.size - game.drawHeight / 100;
+      this.pos.x = game.drawWidth / 2;
+      this.pos.y = game.drawHeight - this.size - game.drawHeight / 100;
+      this.setWidth(this.size);
+      this.setHeight(this.size);
+      this.color = ex.Color.Yellow;
 
-    public onInitialize(engine: ex.Engine){
 
-        this.pos.x = this.xPos;
-        this.pos.y = this.yPos;
-        this.setWidth(this.size);
-        this.setHeight(this.size);
-
-        this.color = ex.Color.Yellow;
+      this.collisionType = ex.CollisionType.Passive;
+      this.body.useCircleCollision(this.size / 4);
 
     }
 
 
-
+    //Methode welchen den Döner an die x-Position der Maus bewegt
     public move(e: ex.Input.PointerEvent){
       if(!(e.worldPos.x > 0 + this.size / 2)){
           this.pos.x = this.size / 2;
@@ -31,14 +29,19 @@ class Player extends ex.Actor{
       }else{
           this.pos.x = e.worldPos.x;
       }
+    }
 
+    public coll(e: ex.PreCollisionEvent){
+      e.other.kill();
     }
 
     public updade(engine: ex.Engine, delta: number){
-        super.update(engine, delta);
-
-
+        ex.Actor.prototype.update.apply(this, [engine, delta]);
 
     }
+
+
+
+
 
 }
