@@ -1,0 +1,34 @@
+/* Globales Stylesheet v.0.1 */
+/* Zum importieren weiterer stylesheets @import "style2.css";  */
+
+/* eventuell benötigt für die karten einbindung
+.karten-widget{
+  box-sizing: content-box;
+} */
+
+body{
+  text-align: center;
+  background-color: black;
+  /* background-image: url(); */
+  background-size: 100%;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+
+p{
+  color: red;
+}
+
+h1{
+  font-size: 30px;
+  color: gold;
+}
+
+h2{
+  color: gold;
+  font-size: 14px}
+}
+
+
+
+a:link{color: blue;}
+a:visited{color: maroon;}
