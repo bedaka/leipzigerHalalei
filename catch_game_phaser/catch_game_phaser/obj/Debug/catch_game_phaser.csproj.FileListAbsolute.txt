@@ -1,7 +1,0 @@
-C:\Users\Jakobus\Documents\Studium\2. Semester\Web Techniken\Döner Projekt\Git\leipzigerHalalei\catch_game_phaser\catch_game_phaser\bin\TypeScriptHTMLApp1.dll.config
-C:\Users\Jakobus\Documents\Studium\2. Semester\Web Techniken\Döner Projekt\Git\leipzigerHalalei\catch_game_phaser\catch_game_phaser\bin\TypeScriptHTMLApp1.dll
-C:\Users\Jakobus\Documents\Studium\2. Semester\Web Techniken\Döner Projekt\Git\leipzigerHalalei\catch_game_phaser\catch_game_phaser\bin\TypeScriptHTMLApp1.pdb
-C:\Users\Jakobus\Documents\Studium\2. Semester\Web Techniken\Döner Projekt\Git\leipzigerHalalei\catch_game_phaser\catch_game_phaser\obj\Debug\catch_game_phaser.csprojResolveAssemblyReference.cache
-C:\Users\Jakobus\Documents\Studium\2. Semester\Web Techniken\Döner Projekt\Git\leipzigerHalalei\catch_game_phaser\catch_game_phaser\obj\Debug\catch_game_phaser.csproj.CoreCompileInputs.cache
-C:\Users\Jakobus\Documents\Studium\2. Semester\Web Techniken\Döner Projekt\Git\leipzigerHalalei\catch_game_phaser\catch_game_phaser\obj\Debug\TypeScriptHTMLApp1.dll
-C:\Users\Jakobus\Documents\Studium\2. Semester\Web Techniken\Döner Projekt\Git\leipzigerHalalei\catch_game_phaser\catch_game_phaser\obj\Debug\TypeScriptHTMLApp1.pdb
