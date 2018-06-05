@@ -15,8 +15,9 @@ var Ingredient = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         _this.size = 10;
         _this.speed = 150;
+        _this.rand = new ex.Random();
         _this.y = 50;
-        _this.x = game.halfDrawWidth;
+        _this.x = _this.rand.floating(0, game.drawWidth);
         _this.setWidth(_this.size);
         _this.setHeight(_this.size);
         _this.color = ex.Color.White;
@@ -89,13 +90,12 @@ game.start( /* loader */).then(function () {
         p.move(e);
     });
     game.input.pointers.primary.on('down', function (e) {
-        spawn();
+        spawnIngredient();
     });
     p.on('precollision', function (e) {
-        console.log("turn up");
         p.coll(e);
     });
-    function spawn() {
+    function spawnIngredient() {
         game.add(new Ingredient());
     }
 });

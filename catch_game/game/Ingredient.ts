@@ -4,12 +4,13 @@ class Ingredient extends ex.Actor{
 
     public size = 10;
     public speed = 150;
+    public rand = new ex.Random();
 
     constructor(){
       super();
 
       this.y = 50;
-      this.x = game.halfDrawWidth;
+      this.x = this.rand.floating(0, game.drawWidth);
       this.setWidth(this.size);
       this.setHeight(this.size);
       this.color = ex.Color.White;
@@ -24,7 +25,6 @@ class Ingredient extends ex.Actor{
 
     public update(engine: ex.Engine, delta: number){
         ex.Actor.prototype.update.apply(this, [engine, delta]);
-
 
         if(this.y > game.drawHeight + 100) this.kill();
     }
