@@ -13,18 +13,17 @@ var Ingredient = /** @class */ (function (_super) {
     __extends(Ingredient, _super);
     function Ingredient() {
         var _this = _super.call(this) || this;
-        _this.size = 10;
-        _this.speed = 150;
         _this.rand = new ex.Random();
-        _this.y = 50;
+        _this.y = -10;
         _this.x = _this.rand.floating(0, game.drawWidth);
+        _this.size = _this.rand.floating(10, 20);
         _this.setWidth(_this.size);
         _this.setHeight(_this.size);
         _this.color = ex.Color.White;
-        _this.rx = 1;
+        _this.rx = _this.rand.floating(1, 5);
         _this.collisionType = ex.CollisionType.Passive;
-        _this.body.useCircleCollision(_this.size);
-        _this.vel = new ex.Vector(0, _this.speed);
+        _this.body.useCircleCollision(_this.size * 0.7);
+        _this.vel = new ex.Vector(0, _this.rand.floating(100, 200));
         return _this;
     }
     Ingredient.prototype.update = function (engine, delta) {
@@ -82,6 +81,12 @@ var resources = {};
 for (var r in resources) {
     loader.addResource(resources[r]);
 }
+var t = new ex.Timer(function () {
+    spawnIngredient();
+}, 1000, true);
+function spawnIngredient() {
+    game.add(new Ingredient());
+}
 // uncomment loader after adding resources
 game.start( /* loader */).then(function () {
     var p = new Player();
@@ -95,7 +100,4 @@ game.start( /* loader */).then(function () {
     p.on('precollision', function (e) {
         p.coll(e);
     });
-    function spawnIngredient() {
-        game.add(new Ingredient());
-    }
 });

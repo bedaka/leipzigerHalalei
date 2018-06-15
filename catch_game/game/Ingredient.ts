@@ -2,23 +2,23 @@
 
 class Ingredient extends ex.Actor{
 
-    public size = 10;
-    public speed = 150;
+    public size;
     public rand = new ex.Random();
 
     constructor(){
       super();
 
-      this.y = 50;
+      this.y = -10;
       this.x = this.rand.floating(0, game.drawWidth);
+      this.size = this.rand.floating(10, 20);
       this.setWidth(this.size);
       this.setHeight(this.size);
       this.color = ex.Color.White;
-      this.rx = 1;
+      this.rx = this.rand.floating(1, 5);
 
       this.collisionType = ex.CollisionType.Passive;
-      this.body.useCircleCollision(this.size);
-      this.vel = new ex.Vector(0,this.speed);
+      this.body.useCircleCollision(this.size * 0.7);
+      this.vel = new ex.Vector(0,this.rand.floating(100, 200));
 
 
     }

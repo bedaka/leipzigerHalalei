@@ -21,6 +21,14 @@ for (var r in resources) {
     loader.addResource(resources[r]);
 }
 
+var t = new ex.Timer(function(){
+  spawnIngredient();
+}, 1000, true);
+
+function spawnIngredient(){
+  game.add(new Ingredient());
+}
+
 
 // uncomment loader after adding resources
 game.start(/* loader */).then(() => {
@@ -29,6 +37,8 @@ game.start(/* loader */).then(() => {
 
   var p = new Player();
   game.add(p);
+
+
 
 
   game.input.pointers.primary.on('move', function(e: ex.Input.PointerEvent){
@@ -43,9 +53,7 @@ game.start(/* loader */).then(() => {
       p.coll(e);
   });
 
-  function spawnIngredient(){
-    game.add(new Ingredient());
-  }
+
 
 
 
