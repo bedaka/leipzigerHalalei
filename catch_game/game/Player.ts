@@ -8,14 +8,14 @@ class Player extends ex.Actor{
       super();
 
       this.pos.x = game.drawWidth / 2;
-      this.pos.y = game.drawHeight - this.size - game.drawHeight / 100;
+      this.pos.y = game.drawHeight - 20;
       this.setWidth(this.size);
       this.setHeight(this.size);
-      this.color = ex.Color.Yellow;
+      //this.color = ex.Color.Yellow;
 
 
       this.collisionType = ex.CollisionType.Passive;
-      this.body.useCircleCollision(this.size / 4);
+      this.body.useCircleCollision(this.size / 3);
 
     }
 

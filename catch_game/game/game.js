@@ -11,7 +11,7 @@ var __extends = (this && this.__extends) || (function () {
 /// <reference path="../node_modules/excalibur/dist/excalibur.d.ts" />
 var Ingredient = /** @class */ (function (_super) {
     __extends(Ingredient, _super);
-    function Ingredient() {
+    function Ingredient(t) {
         var _this = _super.call(this) || this;
         _this.rand = new ex.Random();
         _this.y = -10;
@@ -19,8 +19,8 @@ var Ingredient = /** @class */ (function (_super) {
         _this.size = _this.rand.floating(10, 20);
         _this.setWidth(_this.size);
         _this.setHeight(_this.size);
-        _this.color = ex.Color.White;
         _this.rx = _this.rand.floating(1, 5);
+        _this.addDrawing(t.asSprite());
         _this.collisionType = ex.CollisionType.Passive;
         _this.body.useCircleCollision(_this.size * 0.7);
         _this.vel = new ex.Vector(0, _this.rand.floating(100, 200));
@@ -40,12 +40,12 @@ var Player = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         _this.size = game.drawWidth / 10;
         _this.pos.x = game.drawWidth / 2;
-        _this.pos.y = game.drawHeight - _this.size - game.drawHeight / 100;
+        _this.pos.y = game.drawHeight - 20;
         _this.setWidth(_this.size);
         _this.setHeight(_this.size);
-        _this.color = ex.Color.Yellow;
+        //this.color = ex.Color.Yellow;
         _this.collisionType = ex.CollisionType.Passive;
-        _this.body.useCircleCollision(_this.size / 4);
+        _this.body.useCircleCollision(_this.size / 2);
         return _this;
     }
     //Methode welchen den Döner an die x-Position der Maus bewegt
@@ -75,29 +75,65 @@ var game = new ex.Engine({
 });
 ex.Physics.enabled = true;
 ex.Physics.collisionResolutionStrategy = ex.CollisionResolutionStrategy.RigidBody;
-// create an asset loader
+var elapsed = 0;
+var running = false;
 var loader = new ex.Loader();
-var resources = {};
+var rand = new ex.Random();
+var p = new Player();
+var bg = new ex.Actor();
+var txPlayer = new ex.Texture("assets/donerk.png");
+var txBg = new ex.Texture("assets/merkel.png");
+var txOnion = new ex.Texture("assets/zweibeln.png");
+var txTomato = new ex.Texture("assets/tomate.png");
+var txSauce = new ex.Texture("assets/sosse.png");
+var txSalad = new ex.Texture("assets/salat.png");
+var txMeat = new ex.Texture("assets/fleisch.png");
+var resources = { txPlayer: txPlayer, txBg: txBg, txOnion: txOnion, txTomato: txTomato, txSauce: txSauce, txSalad: txSalad, txMeat: txMeat };
 for (var r in resources) {
     loader.addResource(resources[r]);
 }
-var t = new ex.Timer(function () {
-    spawnIngredient();
-}, 1000, true);
-function spawnIngredient() {
-    game.add(new Ingredient());
-}
 // uncomment loader after adding resources
-game.start( /* loader */).then(function () {
-    var p = new Player();
+game.start(loader).then(function () {
+    bg.addDrawing(txBg.asSprite());
+    bg.pos.x += 100;
+    bg.pos.y += 300;
+    game.add(bg);
+    p.addDrawing(txPlayer.asSprite());
     game.add(p);
-    game.input.pointers.primary.on('move', function (e) {
-        p.move(e);
-    });
-    game.input.pointers.primary.on('down', function (e) {
-        spawnIngredient();
-    });
-    p.on('precollision', function (e) {
-        p.coll(e);
-    });
+    running = true;
 });
+//handler functions
+game.input.pointers.primary.on('move', function (e) {
+    if (running)
+        p.move(e);
+});
+game.on('preupdate', function (e) {
+    elapsed += e.delta;
+    if (elapsed > 1000 && running) {
+        elapsed = 0;
+        spawnIngredient();
+    }
+});
+p.on('precollision', function (e) {
+    p.coll(e);
+});
+function spawnIngredient() {
+    var i = rand.integer(1, 5);
+    switch (i) {
+        case 1:
+            game.add(new Ingredient(txOnion));
+            break;
+        case 2:
+            game.add(new Ingredient(txTomato));
+            break;
+        case 3:
+            game.add(new Ingredient(txSauce));
+            break;
+        case 4:
+            game.add(new Ingredient(txSalad));
+            break;
+        case 5:
+            game.add(new Ingredient(txMeat));
+            break;
+    }
+}
