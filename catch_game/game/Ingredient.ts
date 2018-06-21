@@ -31,7 +31,4 @@ class Ingredient extends ex.Actor{
       if(this.y > game.drawHeight + 100) this.kill();
     }
 
-
-
-
 }

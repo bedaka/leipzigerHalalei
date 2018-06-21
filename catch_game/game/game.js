@@ -77,13 +77,16 @@ var game = new ex.Engine({
 });
 ex.Physics.enabled = true;
 ex.Physics.collisionResolutionStrategy = ex.CollisionResolutionStrategy.RigidBody;
+//Helper variables
 var elapsed = 0;
 var difficulty = 0;
-var running = false;
+//Actors
 var loader = new ex.Loader();
 var rand = new ex.Random();
 var p = new Player();
 var bg = new ex.Actor();
+var score = new ex.Label();
+//Ressources
 var txPlayer = new ex.Texture("assets/donerk.png");
 var txBg = new ex.Texture("assets/merkel.png");
 var txOnion = new ex.Texture("assets/zweibeln.png");
@@ -96,28 +99,36 @@ var resources = { txPlayer: txPlayer, txBg: txBg, txOnion: txOnion, txTomato: tx
 for (var r in resources) {
     loader.addResource(resources[r]);
 }
-// uncomment loader after adding resources
+//Game starter
 game.start(loader).then(function () {
+    //Set up Background
     bg.addDrawing(txBg.asSprite());
     bg.pos.x += 100;
     bg.pos.y += 300;
     game.add(bg);
+    //Set up UI
+    score.text = "Hello Boy";
+    score.fontFamily = "Arial";
+    score.fontUnit = ex.FontUnit.Em;
+    score.color = ex.Color.White;
+    score.pos.x = 30;
+    score.pos.y = 30;
+    score.fontSize = 30;
+    game.add(score);
     p.addDrawing(txPlayer.asSprite());
     game.add(p);
-    running = true;
     track.play(100);
 });
 //handler functions
 game.input.pointers.primary.on('move', function (e) {
-    if (running)
-        p.move(e);
+    p.move(e);
 });
 game.on('preupdate', function (e) {
     elapsed += e.delta;
-    if (elapsed > (1000 - difficulty * 5) && running) {
+    if (elapsed > (1000 - difficulty * 5)) {
         elapsed = 0;
         spawnIngredient();
-        difficulty++;
+        difficulty += 0.3;
     }
 });
 p.on('precollision', function (e) {
