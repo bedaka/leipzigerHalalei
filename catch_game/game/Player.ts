@@ -15,7 +15,7 @@ class Player extends ex.Actor{
 
 
       this.collisionType = ex.CollisionType.Passive;
-      this.body.useCircleCollision(this.size / 3);
+      this.body.useCircleCollision(this.size / 2.3);
 
     }
 

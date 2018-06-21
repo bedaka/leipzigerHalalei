@@ -11,7 +11,7 @@ var __extends = (this && this.__extends) || (function () {
 /// <reference path="../node_modules/excalibur/dist/excalibur.d.ts" />
 var Ingredient = /** @class */ (function (_super) {
     __extends(Ingredient, _super);
-    function Ingredient(t) {
+    function Ingredient(t, d) {
         var _this = _super.call(this) || this;
         _this.rand = new ex.Random();
         _this.y = -10;
@@ -19,11 +19,13 @@ var Ingredient = /** @class */ (function (_super) {
         _this.size = _this.rand.floating(10, 20);
         _this.setWidth(_this.size);
         _this.setHeight(_this.size);
-        _this.rx = _this.rand.floating(1, 5);
+        _this.rx = (_this.rand.floating(1, 5)) + (d * 0.03);
+        t.width *= 0.8;
+        t.height *= 0.8;
         _this.addDrawing(t.asSprite());
         _this.collisionType = ex.CollisionType.Passive;
         _this.body.useCircleCollision(_this.size * 0.7);
-        _this.vel = new ex.Vector(0, _this.rand.floating(100, 200));
+        _this.vel = new ex.Vector(0, (_this.rand.floating(100, 200) + (5 * d)));
         return _this;
     }
     Ingredient.prototype.update = function (engine, delta) {
@@ -45,7 +47,7 @@ var Player = /** @class */ (function (_super) {
         _this.setHeight(_this.size);
         //this.color = ex.Color.Yellow;
         _this.collisionType = ex.CollisionType.Passive;
-        _this.body.useCircleCollision(_this.size / 2);
+        _this.body.useCircleCollision(_this.size / 2.3);
         return _this;
     }
     //Methode welchen den Döner an die x-Position der Maus bewegt
@@ -76,6 +78,7 @@ var game = new ex.Engine({
 ex.Physics.enabled = true;
 ex.Physics.collisionResolutionStrategy = ex.CollisionResolutionStrategy.RigidBody;
 var elapsed = 0;
+var difficulty = 0;
 var running = false;
 var loader = new ex.Loader();
 var rand = new ex.Random();
@@ -88,7 +91,8 @@ var txTomato = new ex.Texture("assets/tomate.png");
 var txSauce = new ex.Texture("assets/sosse.png");
 var txSalad = new ex.Texture("assets/salat.png");
 var txMeat = new ex.Texture("assets/fleisch.png");
-var resources = { txPlayer: txPlayer, txBg: txBg, txOnion: txOnion, txTomato: txTomato, txSauce: txSauce, txSalad: txSalad, txMeat: txMeat };
+var track = new ex.Sound("assets/track.mp3");
+var resources = { txPlayer: txPlayer, txBg: txBg, txOnion: txOnion, txTomato: txTomato, txSauce: txSauce, txSalad: txSalad, txMeat: txMeat, track: track };
 for (var r in resources) {
     loader.addResource(resources[r]);
 }
@@ -101,6 +105,7 @@ game.start(loader).then(function () {
     p.addDrawing(txPlayer.asSprite());
     game.add(p);
     running = true;
+    track.play(100);
 });
 //handler functions
 game.input.pointers.primary.on('move', function (e) {
@@ -109,9 +114,10 @@ game.input.pointers.primary.on('move', function (e) {
 });
 game.on('preupdate', function (e) {
     elapsed += e.delta;
-    if (elapsed > 1000 && running) {
+    if (elapsed > (1000 - difficulty * 5) && running) {
         elapsed = 0;
         spawnIngredient();
+        difficulty++;
     }
 });
 p.on('precollision', function (e) {
@@ -121,19 +127,19 @@ function spawnIngredient() {
     var i = rand.integer(1, 5);
     switch (i) {
         case 1:
-            game.add(new Ingredient(txOnion));
+            game.add(new Ingredient(txOnion, difficulty));
             break;
         case 2:
-            game.add(new Ingredient(txTomato));
+            game.add(new Ingredient(txTomato, difficulty));
             break;
         case 3:
-            game.add(new Ingredient(txSauce));
+            game.add(new Ingredient(txSauce, difficulty));
             break;
         case 4:
-            game.add(new Ingredient(txSalad));
+            game.add(new Ingredient(txSalad, difficulty));
             break;
         case 5:
-            game.add(new Ingredient(txMeat));
+            game.add(new Ingredient(txMeat, difficulty));
             break;
     }
 }
