@@ -22,7 +22,13 @@ body{
 
 #navbar{
   background-color: #D32918;
+  padding: 10px;
 
+}
+
+.btn{
+  border-radius: 20px;
+  text-align: left;
 }
 p{
   color: red;
