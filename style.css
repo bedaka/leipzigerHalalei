@@ -8,7 +8,7 @@
 
 body{
   text-align: center;
-  background-color: black;
+  background-color: #F0FFFF;
   /* background-image: url(); */
   background-size: 100%;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
@@ -20,6 +20,10 @@ body{
   margin: 15px;
 }
 
+#navbar{
+  background-color: #D32918;
+
+}
 p{
   color: red;
 }
@@ -33,7 +37,6 @@ h2{
   color: gold;
   font-size: 14px}
 }
-
 
 
 a:link{color: blue;}
