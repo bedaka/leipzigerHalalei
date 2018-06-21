@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" media="all" />
+    <link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css">
+    <title> Leipziger Halalei </title>
+  </head>
+
+    <body>
+      <div id="map"></div>
+      <script>
+        function initMap() {
+          // Create a map object and specify the DOM element for display.
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+          });
+        }
+
+        </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0ukUla_DDvWoCDMlu4ypHBAUWV9cPQJI
+&callback=initMap"
+    async defer></script>
+  </body>
+</html>
