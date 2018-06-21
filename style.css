@@ -45,18 +45,6 @@ a:visited{color: maroon;}
   height: 100px;
 }
 
-#loveProgress {
-    width: 100%;
-    background-color: grey;
-}
-#loveBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
-    text-align: center;
-    color: white;
-}
-
 #beautifulYou{
   width: 100px;
   heigth: 60px;
