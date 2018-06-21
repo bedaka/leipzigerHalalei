@@ -38,3 +38,18 @@ h2{
 
 a:link{color: blue;}
 a:visited{color: maroon;}
+
+#container {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+#beautifulYou{
+  width: 100px;
+  heigth: 60px;
+}
+#beautifulKebab{
+  width: 100px;
+  heigth: 60px;
+}
