@@ -11,7 +11,8 @@ body{
   background-color: #afd96a;
   /* background-image: url(); */
   background-size: 100%;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+  font-family: "Verdana, Geneva, sans-serif";
+  font-size: 100%;
 }
 
 #logo{
@@ -21,10 +22,17 @@ body{
 }
 
 #navbar{
+  position: fixed;
   background-color: #D32918;
   padding: 10px;
 
 }
+
+/*#content1{
+  background-color: rgba(175, 217, 106, 0.8);
+  //background-image: url(./images/carpet.png);
+
+}*/
 
 .btn{
   border-radius: 20px;
@@ -32,16 +40,17 @@ body{
 }
 p{
   color: red;
+  font-size: 1em;
 }
 
 h1{
-  font-size: 30px;
+  font-size: 3.0em;
   color: gold;
 }
 
 h2{
   color: gold;
-  font-size: 14px}
+  font-size: 2.0em}
 }
 
 
