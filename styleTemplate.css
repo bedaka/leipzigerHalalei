@@ -14,7 +14,7 @@
 }
 
 body{
-  background-color: #1a1a1a;
+  background-color: black;
   /* background-image: url(); */
   background-size: 100%;
   font-family: "Verdana, Geneva, sans-serif";
@@ -22,7 +22,7 @@ body{
   padding-top: 160px;
 }
 header{
-    background-color: #1a1a1a;
+    background-color:  rgb(175, 217, 106);
     height: 200px;
     padding-top: 40px;
     text-align: center;
@@ -47,6 +47,10 @@ main,
 
 main{
   background-color: #afd96a;
+  background: url("./images/glut.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   text-align: center;
   padding: 150px 50px 50px 50px;
 }
@@ -82,7 +86,7 @@ footer {
 }*/
 
 .flex-container{ /* für css flexbox */
-  background-color: #afd96a;
+  background-color: rgb(175, 217, 106, 0.8);
   list-style: none;
   display: flex;
   flex-flow: row wrap; /*reihenfolge der container */
