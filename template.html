@@ -5,54 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" media="all" />
+    <link rel="stylesheet" href="styleTemplate.css" media="all">
 
     <!-- EINBINDUNG VON PROCESSING NICHT AENDERN
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
     <script language="javascript" type="text/javascript" src="sketch_180613a.js"></script>
      OK, FERTIG -->
-
     <title> Leipziger Halalei </title>
     <!--WIEDER AKTIVIEREN
       <style> body {padding: 0; margin: 0;} </style> -->
   </head>
-
   <body>
-
-      <!-- Bootstrap-container für die drei-spaltige Ansicht -->
-      <div class="container-fluid">  <!-- -fluid für width 100% -->
-        <div class="row">
-<!-- HIER BEGINNT DIE NAVBAR  -->
-          <div class="col-md-3" id="navbar"> <!-- md = medium (>= 768px) -->
-            <p>Spalte Nummer 1</p>
-            <img src="./images/doener.png" width="100%">
-            <nav>
-            <ul class="grid-item" style="list-style-type:none">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./news.html">News</a></li>
-                <li><a href="./map.html">Karte</a></li>
-                <li><button type="button" href="javascript:void(0);" NAME="Cabab Catch"  title="Cebab Catch" onClick=window.open("catch_game/index.html","Ratting","width=410,height=610,0,status=0,");>Cebab Catch </button>
-              </ul>
-            </nav>
+    <header>
+      <h1>Leipziger Hallalei Logo </h1>
+    </header>
+    <div class="flex-container" >
+      <div class="flexNavbar">
+          <div class="line1">
+            <div class="ornamentOL"></div>
+            <div class="ornamentOR"></div>
           </div>
-          <div class="col-md-9">
-            <p>Spalte Nummer 2</p>
-            <div id="logo"> Hier Logo </div>
-<!-- <div id="animation"> <style> body {padding: 0; margin: 0;} </style> </div> -->
+          <div>
+            <img src="./images/doenerFrei.png" width="70%">
+          </div>
+          <h2> Unterseiten </h2>
+          <nav id="navButtons">
+            <button type = "button" class="btn btn-primary btn-lg btn-block" >01. Home</button>
+            <button type = "button" class="btn btn-primary btn-lg btn-block" >02. News</button>
+            <button type = "button" class="btn btn-primary btn-lg btn-block" >03. Karte</button>
+            <button type = "button" class="btn btn-primary btn-lg btn-block" href = "javascript:void(0);" onClick=window.open("catch_game/index.html","Ratting","width=410,height=610,0,status=0,");>04. Cabab Catch</button>
+            <button type = "button" class="btn btn-primary btn-lg btn-block" >05. Cebab Match</button>
+          </nav>
+          <div class="line1">
+            <div class="ornamentUL"></div>
+            <div class="ornamentUR"></div>
+          </div>
+      </div>
+      <div class="flexContent"id="hintergund1" >
             <h1>Leipziger Halalei</h1>
             <h2>Die ultimative Webseite zu Leipzig Dönerkultur</h2>
+            <article>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </article>
+            <div class="slideshow">
+              <img class="mySlides" src="./images/teller2.jpg">
+              <img class="mySlides" src="./images/doener.png">
+            </div>
+            <script>
+                var myIndex = 0;
+                carousel();
 
-<!--     HIER INHALTE EINFUEGEN      -->
-
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < x.length; i++) {
+                       x[i].style.display = "none";
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) {myIndex = 1}
+                    x[myIndex-1].style.display = "block";
+                    setTimeout(carousel, 2000); // Change image every 2 seconds
+                }
+            </script>
+            <div>
+              <article>
+              <p>Wem läuft bei diesem Anblick nicht schon das Wasser im Mund zusammen?
+              Schick uns einfach deine schönsten Dönderfotos an leipziger-hallalei@gmail.com </p>
+            </article>
           </div>
-        </div>
       </div>
+    </div>
 
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-      <footer>
-        <p><a href="./impressum.html">Impressum</p>
-      </footer>
+    <footer>
+      <br>
+      <p><a href="./impressum.html">Impressum</p>
+    </footer>
     </body>
   </html>

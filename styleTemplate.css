@@ -1,0 +1,166 @@
+/* Globales Stylesheet v.0.1 */
+/* Zum importieren weiterer stylesheets @import "style2.css";  */
+
+/* eventuell benötigt für die karten einbindung
+.karten-widget{
+  box-sizing: content-box;
+} */
+@font-face {
+  font-family: "Niconne";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Niconne"), local("Niconne-Regular"), url("http://fonts.gstatic.com/s/niconne/v7/w8gaH2QvRug1_rTfnQyn2Q.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+body{
+  text-align: center;
+  background-color: #5fd96f;
+  /* background-image: url(); */
+  background-size: 100%;
+  font-family: "Verdana, Geneva, sans-serif";
+  font-size: 100%;
+}
+article{
+  text-align: left;
+}
+p{
+  font-size: 1em;
+}
+
+h1{
+  font:3em "Niconne", sans-serif;
+  color: gold;
+}
+
+h2{
+  font-family: "Odine";
+  color: gold;
+  font-size: 2.0em}
+}
+footer{
+  text-align: center;
+  padding: 40px;
+}
+/*#hintergund1{
+  background: url("./images/folded-paper.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.4;
+}*/
+
+.flex-container{ /* für css flexbox */
+  background-color: #afd96a;
+  list-style: none;
+  display: flex;
+  flex-direction: row; /*reihenfolge der container */
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-content: center; /* vll center / space around */
+  /*justify-content: space-around; /* verteilung des freien platzes */
+}
+
+.flexNavbar{
+  order: 0;
+  flex: 25%;
+  align-self: center; /* vielleicht mal center ausprobieren */
+  flex
+  height: auto;
+  margin: auto; /* magic */
+  background-color: #D32918;
+  padding: 15px;
+  /*margin: 10px;*/
+}
+
+.flexContent{
+  order: 0;
+  flex: 75%;
+  /*align-self: stretch; /* hoehe der Box */
+  /*margin: auto; */
+  padding: 30px;
+  background-color: rgba(241,241,241, 0.2) ;
+}
+
+#logo{
+  height: 100px;
+  background-color: white;
+  margin: 15px;
+}
+
+#navButtons{
+  font: 14px;
+}
+
+.slideshow{
+  max-width: 500px;
+
+
+}
+.mySlides{
+  display: none;
+  width: 100%;
+  max-height: 300px;
+}
+
+
+.lineO{
+  height: 50px;
+}
+.ornamentOL{
+  width: 50px;
+  height: 50px;
+  background: url('./images/eckeOL.png') no-repeat;
+  background-size: contain;
+  float: left;
+  margin: -13px;
+}
+.ornamentOR{
+  width: 50px;
+  height: 50px;
+  background: url('./images/eckeOR.png') no-repeat;
+  background-size: contain;
+  float: right;
+  margin: -13px;
+}
+.ornamentUR{
+  width: 50px;
+  height: 50px;
+  background: url('./images/eckeUR.png') no-repeat;
+  background-size: contain;
+  float: right;
+  margin: -13px;
+}
+.ornamentUL{
+  width: 50px;
+  height: 50px;
+  background: url('./images/eckeUL.png') no-repeat;
+  background-size: contain;
+  float: left;
+  margin: -13px;
+}
+
+
+
+a:link{color: blue;}
+a:visited{color: maroon;}
+
+#container {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+#beautifulYou{
+  width: 100px;
+  height: 60px;
+}
+#beautifulKebab{
+  width: 100px;
+  height: 60px;
+}

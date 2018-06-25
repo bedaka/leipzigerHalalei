@@ -22,17 +22,16 @@ body{
 }
 
 #navbar{
-  position: fixed;
   background-color: #D32918;
   padding: 10px;
 
 }
-
-/*#content1{
+/*
+#content1{
   background-color: rgba(175, 217, 106, 0.8);
-  //background-image: url(./images/carpet.png);
-
-}*/
+  background-image: url("./images/carpet.png");
+}
+*/
 
 .btn{
   border-radius: 20px;
