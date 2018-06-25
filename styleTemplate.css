@@ -86,15 +86,18 @@ footer {
 }*/
 
 .flex-container{ /* für css flexbox */
-  background-color: rgb(175, 217, 106, 0.8);
   list-style: none;
   display: flex;
-  flex-flow: row wrap; /*reihenfolge der container */
+  flex-flow: column wrap; /*reihenfolge der container */
   align-items: stretch;
   /*display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex; */
+}
+.flex-container >div {
+  background-color: rgb(175, 217, 106, 0.8);
+  margin: 10px;
 }
 
 .main-nav{
