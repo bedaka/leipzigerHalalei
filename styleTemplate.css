@@ -98,7 +98,9 @@ footer {
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  background-color: silver;
+  max-height: 150px;
+  /*background-color: silver;*/
+  background: url("./images./edelstahl2.png");
   z-index: 150; /* Dass die leiste immer oben ist */
   margin-bottom: -150px; /*verhindert springen im moment des fixens */
   box-shadow: 0 3px 4px rgba(0,0,0,.4);
@@ -118,7 +120,15 @@ footer {
   background-color: rgba(0,0,0, .3);
 }
 
-.flex-navbar{
+.kebabBlink{
+  height: 150px;
+  width: 150px;
+  background: url("./images/kebab2.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.flex-navbar{ /* die links */
   flex: 25%;
   align-self: center; /* vielleicht mal center ausprobieren */
   height: auto;
@@ -212,4 +222,44 @@ a:visited{color: maroon;}
 #beautifulKebab{
   width: 100px;
   height: 60px;
+}
+
+/****** Flackeranimation für den Trashlook ****************/
+
+@-webkit-keyframes blink {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: .99;
+    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+    }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    text-shadow: none;
+}
+}
+@-moz-keyframes blink {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: .99;
+    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+    }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    text-shadow: none;
+}
+}
+@-o-keyframes blink {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: .99;
+    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+    }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    text-shadow: none;
+}
+}
+#flacker {
+     /*animation: blink 11s linear infinite;*/
+    -webkit-animation: blink 11s linear infinite;
+    -moz-animation:  blink 11s linear infinite;
+    -o-animation:  blink 11s linear infinite;
+
 }
