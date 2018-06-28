@@ -5,11 +5,12 @@
 .karten-widget{
   box-sizing: content-box;
 } */
+
 @font-face {
-  font-family: "Niconne";
+  font-family: 'Nexa Light Regular';
   font-style: normal;
   font-weight: 400;
-  src: local("Niconne"), local("Niconne-Regular"), url("http://fonts.gstatic.com/s/niconne/v7/w8gaH2QvRug1_rTfnQyn2Q.woff2") format("woff2");
+  src: local('Nexa Light Regular'), url('nexa-light-webfont.woff') format('woff');
   unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -17,8 +18,8 @@ body{
   background-color: black;
   /* background-image: url(); */
   background-size: 100%;
-  font-family: "Verdana, Geneva, sans-serif";
   font-size: 100%;
+  color: white;
   padding-top: 235px; /*gibt platz fuer das banner */
 }
 header{
@@ -297,4 +298,63 @@ a:visited{color: maroon;}
     -moz-animation:  blink 11s linear infinite;
     -o-animation:  blink 11s linear infinite;
 
+}
+/*Karten Außenframe*/
+.mapouter{
+  text-align:center;
+  height:100%;
+  width:100%;
+}
+/*Canvas von der Karte*/
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  display: block;
+  height:100%;
+  width:100%;
+}
+/*Animation der kleinen Döner*/
+.scroll-left {
+width: 100%;
+ height: 100px;
+ overflow: hidden;
+ position: relative;
+ opacity: 1.0;
+}
+.scroll-left .inner {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 100px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ -moz-animation: scroll-left 5s linear infinite;
+ -webkit-animation: scroll-left 5s linear infinite;
+ animation: scroll-left 5s linear infinite;
+}
+/* Bewegung der kleinen Dönellis */
+@-moz-keyframes scroll-left {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-left {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-left {
+ 0%   {
+ -moz-transform: translateX(100%); /* Browser bug fix */
+ -webkit-transform: translateX(100%); /* Browser bug fix */
+ transform: translateX(100%);
+ }
+ 100% {
+ -moz-transform: translateX(-100%); /* Browser bug fix */
+ -webkit-transform: translateX(-100%); /* Browser bug fix */
+ transform: translateX(-100%);
+ }
 }

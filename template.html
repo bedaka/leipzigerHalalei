@@ -23,8 +23,8 @@
       <div class="flexNavboardSigns">
         <p> Tagesangebot</p><p><a href = "#home">01.Home</a></p></div>
       <div class="flexNavboardSigns" id="flacker"><a href = "#news"> 02. News</a></div>
-      <div class="flexNavboardSigns"><a href = "#karte">03. Karte</a></div>
-      <div class="flexNavboardSigns"><a href = "#cebabCatch">04. Cabab Catch</a></div>
+      <div class="flexNavboardSigns"><a href = "#map">03. Karte</a></div>
+      <div class="flexNavboardSigns"><a href = "javascript:void(0);" onClick=window.open("catch_game/index.html","Ratting","width=410,height=610,0,status=0,")>04. Cabab Catch</a></div>
       <div class="flexNavboardSigns"><a href = "#matchingKebab">05. Matching Kebab </a></div>
       <div class="kebabBlink"></div> <!-- Nur spielerei kann wieder weg -->
     </nav>
@@ -60,9 +60,21 @@
           </div>
               <div id ="home">
               <h1>Leipziger Halalei</h1>
-              <h2>Die ultimative Webseite zu Leipzig Dönerkultur</h2>
+              <h2>Die ultimative Webseite zu Leipzigs Dönerkultur</h2>
               <article>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Vegane Restaurantführer gibt es für Leipzig im Übermaß. Doch
+                was tun, wenn ein saftiger, frischer, krosser und
+                selbstgemachter Döner das ist, wonach man lüstet? Weshalb sich
+                die Zunge in schnalzender Selbstgefälligkeit windet, die
+                Flüssigkeit im Mund ozeanartig ausweitet. Dann wird man allein
+                gelassen in weiter Flur mit knurrendem Magen und heruntergezogenen
+                Mundwinkeln. Doch wir schaffen Abhilfe. Nicht nur empfehlen wir
+                dir exklusiv unsere Top-Döner der Stadt, sondern kannst du auch
+                Spiel und Spaß auf dieser Website erleben. Ob du die Zutaten
+                deines eigenen Kababs fangen, oder herausfinden willst,
+                wie gut du und dein Schatz (Döner) zusammenpasst - du bist bei
+                uns gut aufgehoben. Also lehn dich zurück und Achtung mit Soße
+                und Tastatur. Lol. In Liebe Dein Leipziger-Hallalei Team.</p>
               </article>
               <div class="slideshow">
                 <img class="mySlides" src="./images/teller2.jpg">
@@ -79,9 +91,66 @@
               </article>
             </div>
           </div>
-<!-- ************************************************************-->
+<!-- ********************************* News ***************************-->
+            <div id = "news">
+              <h1> News von Twitter and Co. KG </h1>
+              <article>
+                Hier kommen tolle News von Twitter in Zusammenhang mit #leipzig #döner #vöner
+              </article>
+            </div>
+<!-- ******************************* Map *****************************-->
+            <div id = "map">
+              <h1> Map of Leipzigs Döners </h1>
+            <div class="scroll-left">
+            <div class="inner">
+              <img src="./images/spiess100.png">
+              <img src="./images/spiess100.png">
+              <img src="./images/spiess100.png">
+              <img src="./images/spiess100.png">
+              <img src="./images/spiess100.png">
+              <img src="./images/spiess100.png">
+              <img src="./images/spiess100.png">
+              <img src="./images/spiess100.png">
+              <img src="./images/spiess100.png">
+            </div>
+            </div>
+
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe width=100% height="300" id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=D%C3%B6ner%20Leipzig&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  frameborder="1" scrolling="no" marginheight="1" marginwidth="0">
+                </iframe>
+              </div>
+            </div>
+
+            <div class="scroll-left">
+              <div class="inner">
+                <img src="./images/spiess100.png">
+                <img src="./images/spiess100.png">
+                <img src="./images/spiess100.png">
+                <img src="./images/spiess100.png">
+                <img src="./images/spiess100.png">
+                <img src="./images/spiess100.png">
+                <img src="./images/spiess100.png">
+                <img src="./images/spiess100.png">
+                <img src="./images/spiess100.png">
+              </div>
+            </div>
+            </div>
+<!-- ***************************** Matching **************************-->
             <div id = "matchingKebab">
                 <h1> Matching Kebab </h1>
+                <article>
+                  Bild 1 = Beautiful You, Bild 2 = Beautful Döner <br>
+                  Bild1 + Bild2 = Big Love Forever (oder vielleicht doch nicht). <br>
+                  Bei unserem Matching Verfahren wird ein komplexer Algorithmus,
+                  anhand deiner Interessen, geistigen Fähigkeiten, Einstellungen,
+                  Werte und Facebook-Likes herausfinden, wie gut du und dein
+                  Schawarma zusammenpassen.
+                  <br>
+                  Also schau dem Herz beim Wachsen zu.
+                </article>
                 <svg id="containerHeart" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
                   <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
                   <path id="heart-path" fill-opacity="0" stroke-width="3" stroke="#ED6A5A" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
@@ -94,19 +163,8 @@
                 <button id = "matchLove" type:"button" onclick="matchHeart('beautifulKebab', 'beautifulYou')">LoveMatch</button>
               </div>
             </div>
-<!-- ***************************  Matching  *******************************-->
-            <div id="map"></div>
-            <script>
-              function initMap() {
-                // Create a map object and specify the DOM element for display.
-                var map = new google.maps.Map(document.getElementById('map'), {
-                  center: {lat: -34.397, lng: 150.644},
-                  zoom: 8
-                });
-              }
-              </script>
-              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0ukUla_DDvWoCDMlu4ypHBAUWV9cPQJI&callback=initMap" async defer></script>
-<!-- ************************** Karte ********************************-->
+
+<!-- *******************************************************************-->
 
             <div class="line1">
               <div class="ornamentUL"></div>
