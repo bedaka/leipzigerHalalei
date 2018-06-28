@@ -218,20 +218,41 @@ footer {
 a:link{color: blue;}
 a:visited{color: maroon;}
 
-#container {
-  margin: 20px;
-  width: 25%;
-  height: 25%;
-  align: middle;
+#containerHeart {
+  display: block;
+  margin: auto;
+  width: 20%;
+  height: 20%;
 }
-
 #beautifulYou{
-  width: 100px;
-  height: 60px;
+  width: 30%;
+  height: 20%;
 }
 #beautifulKebab{
-  width: 100px;
-  height: 60px;
+  width: 30%;
+  height: 20%;
+}
+#matchLove{
+  display: block;
+  margin: auto;
+  border-radius: 12px;
+  width: 20%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: white;
+  color: black;
+  border: 2px solid #ED6A5A;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+#matchLove:hover {
+    background-color: #ED6A5A;
+    color: white;
 }
 
 /****** Flackeranimation für den Trashlook ****************/
