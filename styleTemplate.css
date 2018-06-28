@@ -200,7 +200,6 @@ footer {
   max-height: 300px;
 }
 
-
 .lineO{
   height: 50px;
 }
@@ -340,6 +339,7 @@ width: 100%;
  position: relative;
  opacity: 1.0;
 }
+/*zur Animation der kleinen Döners*/
 .scroll-left .inner {
  position: absolute;
  width: 100%;
@@ -376,4 +376,46 @@ width: 100%;
  -webkit-transform: translateX(-100%); /* Browser bug fix */
  transform: translateX(-100%);
  }
+}
+
+/*SliderShow Content*/
+.reviewSliderContainer{
+  max-width:980px;
+  margin:auto;
+  position:relative;
+  border:none;
+  display:inline-block;
+  padding:8px 16px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background-color:inherit;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.black{
+  color:#fff!important;
+  background-color:#000!important;
+}
+.display-left{
+  position:absolute;
+  top:50%;
+  left:0%;
+  transform:translate(0%,-50%);
+  -ms-transform:translate(-0%,-50%);
+}
+.display-right{
+  position:absolute;
+  top:50%;
+  right:0%;
+  transform:translate(0%,-50%);
+  -ms-transform:translate(0%,-50%);
+}
+
+.reviewSlider{
+  display: none;
+  width: 100%;
+  max-height: 300px;
 }
