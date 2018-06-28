@@ -19,11 +19,15 @@ body{
   background-size: 100%;
   font-family: "Verdana, Geneva, sans-serif";
   font-size: 100%;
-  padding-top: 160px;
+  padding-top: 235px; /*gibt platz fuer das banner */
 }
 header{
+    background: url("./images/headerbanner.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
     background-color: #b5d158;
-    height: 200px;
+    height: 235px;
     padding-top: 40px;
     text-align: center;
     position: fixed; /* header liegt hinten und verschwindet beim scrollen */

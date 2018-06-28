@@ -1,9 +1,9 @@
 $(document).ready(function(){
-  
+
 // ******************* Sticky Navbar *********************
   var mn = $(".main-nav");
   $(window).scroll(function(){
-    if( $(this).scrollTop() > 160 ) {
+    if( $(this).scrollTop() > 235 ) {
       mn.addClass("main-nav-scrolled");
       }
       else{
