@@ -26,14 +26,25 @@ header{
     background: url("./images/headerbanner.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center top;
+    background-position: center 3%;
     background-color: #b5d158;
+
     height: 235px;
     padding-top: 40px;
+    margin-top: 5px;
     text-align: center;
     position: fixed; /* header liegt hinten und verschwindet beim scrollen */
     top: 0;
     width: 100%;
+}
+
+body{
+  background-color: grey;
+  /* background-image: url(); */
+  background-size: 100%;
+  font-family: "Verdana, Geneva, sans-serif";
+  font-size: 100%;
+  padding-top: 200px; /*gibt platz fuer das banner */
 }
 /*******für die sticky navbar****************************/
 
@@ -51,13 +62,12 @@ main,
 /*********************************************************/
 
 main{
-  background-color: #afd96a;
-  background: url("./images/glut.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background: url("./images/halftone-yellow.png");
+  background-repeat: repeat;
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
   text-align: center;
-  padding: 150px 50px 50px 50px;
+  padding: 100px 50px 50px 50px;
 }
 
 article {
@@ -102,34 +112,43 @@ footer {
   display: -ms-flexbox;
   display: -webkit-flex; */
 }
-.flex-container >div {
-  background-color: rgb(175, 217, 106, 0.8);
+ .flex-container > div {
+  background-color: rgb(0, 0, 0, 0.1);
   margin: 10px;
+  padding: 10px 40px 10px 40px;
 }
+
 
 .main-nav{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
-  max-height: 150px;
-  /*background-color: silver;*/
-  background: url("./images./edelstahl2.png");
+  height: 60px;
+  background-color: white;
   z-index: 150; /* Dass die leiste immer oben ist */
-  margin-bottom: -150px; /*verhindert springen im moment des fixens */
+  margin-bottom: -60px; /*verhindert springen im moment des fixens */
   box-shadow: 0 3px 4px rgba(0,0,0,.4);
 }
-.main-nav div{
+.main-nav > a{
   display: inline-block;
+  color: black;
 }
 
-.flexNavboardSigns{
+.icons{
+  height: 50px;
+}
+
+
+/* .flexNavboardSigns{
   height: 150px;
   width: 250px;
   background: url("./images/glowbox2.png");
   background-repeat: no-repeat;
   background-size: contain;
-}
+} */
 .flexNavboardSigns:hover{
   background-color: rgba(0,0,0, .3);
 }
