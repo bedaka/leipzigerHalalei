@@ -1,11 +1,6 @@
 /* Globales Stylesheet v.0.1 */
 /* Zum importieren weiterer stylesheets @import "style2.css";  */
 
-/* eventuell benötigt für die karten einbindung
-.karten-widget{
-  box-sizing: content-box;
-} */
-
 @font-face {
   font-family: 'Nexa Light Regular';
   font-style: normal;
@@ -16,7 +11,6 @@
 
 body{
   background-color: grey;
-  /*background-size: 100%; */
   font-size: 100%;
   color: black;
   padding-top: 200px; /*gibt platz fuer das banner */
@@ -56,8 +50,6 @@ main,
 main{
   background: url("./images/halftone-yellow.png");
   background-repeat: repeat;
-  /* background-attachment: fixed; */
-  /* background-size: cover; */
   text-align: center;
   padding: 100px 50px 50px 50px;
 }
@@ -71,15 +63,7 @@ article {
   font-family: 'Kalam', cursive;
   font-size: 200%;
 =======
-
->>>>>>> 87d80174f73893b6b76de20eb7a0cc476730ae90
 }
-
-/* h1 {
-  font:3em "Niconne", sans-serif;
-  color: gold;
-  text-shadow: 0px 2px 1px #111111;
-} */
 
 h1, h2 {
   /* font-family: "Arial";
@@ -97,6 +81,7 @@ p {
 footer {
   text-align: center;
   padding: 40px;
+  background-color: black;
 }
 
 .flex-container{ /* für css flexbox */
@@ -104,10 +89,6 @@ footer {
   display: flex;
   flex-flow: column wrap; /*reihenfolge der container */
   align-items: stretch;
-  /*display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex; */
 }
 
  .flex-container > div {
@@ -115,7 +96,6 @@ footer {
   margin: 10px;
   padding: 10px 40px 10px 40px;
 }
-
 
 .main-nav{
   display: flex;
@@ -130,6 +110,7 @@ footer {
   margin-bottom: -60px; /*verhindert springen im moment des fixens */
   box-shadow: 0 3px 4px rgba(0,0,0,.4);
 }
+
 .main-nav > a{
   display: inline-block;
   text-decoration: none;
@@ -140,35 +121,15 @@ footer {
   height: 50px;
 }
 
-
-/* .flexNavboardSigns{
-  height: 150px;
-  width: 250px;
-  background: url("./images/glowbox2.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-} */
-.flexNavboardSigns:hover{
-  background-color: rgba(0,0,0, .3);
+@media only screen and (max-width: 720px){
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .main-nav{
+    height: 140px;
+  }
 }
-
-.kebabBlink{
-  height: 150px;
-  width: 150px;
-  background: url("./images/kebab2.gif");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.flex-content{
-  flex: 75%;
-  /*align-self: stretch; /* hoehe der Box */
-  /*margin: auto; */
-  padding: 30px;
-  background-color: rgba(241,241,241, 0.2) ;
-}
-
-
 
 #logo{
   height: 100px;
@@ -182,7 +143,6 @@ footer {
 
 .slideshow{
   max-width: 500px;
-
 
 }
 .mySlides{
@@ -232,49 +192,6 @@ footer {
     color: white;
 }
 
-footer {
-  background-color: black;
-}
-
-/****** Flackeranimation für den Trashlook ****************/
-
-@-webkit-keyframes blink {
-  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    opacity: .99;
-    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
-    }
-  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-    opacity: 0.4;
-    text-shadow: none;
-}
-}
-@-moz-keyframes blink {
-  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    opacity: .99;
-    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
-    }
-  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-    opacity: 0.4;
-    text-shadow: none;
-}
-}
-@-o-keyframes blink {
-  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    opacity: .99;
-    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
-    }
-  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-    opacity: 0.4;
-    text-shadow: none;
-}
-}
-#flacker {
-     /*animation: blink 11s linear infinite;*/
-    -webkit-animation: blink 11s linear infinite;
-    -moz-animation:  blink 11s linear infinite;
-    -o-animation:  blink 11s linear infinite;
-
-}
 /*Karten Außenframe*/
 .mapouter{
   text-align:center;
