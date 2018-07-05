@@ -67,7 +67,7 @@ article {
 }
 
 #gruesse {
-  
+
 }
 
 h1 {
@@ -153,16 +153,6 @@ footer {
   background-size: contain;
 }
 
-.flex-navbar{ /* die links */
-  flex: 25%;
-  align-self: center; /* vielleicht mal center ausprobieren */
-  height: auto;
-  margin: auto; /* magic */
-  background-color: #D32918;
-  padding: 15px;
-  /*margin: 10px;*/
-}
-
 .flex-content{
   flex: 75%;
   /*align-self: stretch; /* hoehe der Box */
@@ -170,6 +160,8 @@ footer {
   padding: 30px;
   background-color: rgba(241,241,241, 0.2) ;
 }
+
+
 
 #logo{
   height: 100px;
