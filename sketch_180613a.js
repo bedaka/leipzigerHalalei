@@ -10,7 +10,8 @@ function preload(){
  }
 
 function setup() {
-   createCanvas(640, 480, WEBGL);
+   var c = createCanvas(320, 320, WEBGL);
+   c.parent('footer');
   }
 
 function draw() {

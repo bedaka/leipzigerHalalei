@@ -128,6 +128,10 @@ footer {
 }
 .main-nav > a{
   display: inline-block;
+  text-decoration: none;
+}
+
+.main-nav > a:link{
   color: black;
 }
 
@@ -230,11 +234,6 @@ footer {
   margin: -13px;
 }
 
-
-
-a:link{color: blue;}
-a:visited{color: maroon;}
-
 #containerHeart {
   display: block;
   margin: auto;
@@ -270,6 +269,10 @@ a:visited{color: maroon;}
 #matchLove:hover {
     background-color: #ED6A5A;
     color: white;
+}
+
+footer {
+  background-color: black;
 }
 
 /****** Flackeranimation für den Trashlook ****************/
@@ -314,11 +317,11 @@ a:visited{color: maroon;}
 /*Karten Außenframe*/
 .mapouter{
   text-align:center;
-  height:100%;
+  height: 400px;
   width:100%;
 }
 /*Canvas von der Karte*/
-.gmap_canvas {
+.gf_canvas {
   overflow:hidden;
   background:none!important;
   display: block;
@@ -338,7 +341,6 @@ width: 100%;
  position: absolute;
  width: 100%;
  height: 100%;
- margin: 0;
  line-height: 100px;
  text-align: center;
  /* Starting position */
@@ -349,6 +351,11 @@ width: 100%;
  -moz-animation: scroll-left 5s linear infinite;
  -webkit-animation: scroll-left 5s linear infinite;
  animation: scroll-left 5s linear infinite;
+}
+
+#untererSlide{
+
+  margin-bottom: 100px;
 }
 /* Bewegung der kleinen Dönellis */
 @-moz-keyframes scroll-left {
