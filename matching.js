@@ -17,9 +17,12 @@ var loadFile = function(event,id) {
 
 function showPercentage(){
   var percentage = 100 * random;
-  document.getElementById("matchLove").innerHTML = percentage.toFixed(2) + "%";
   if(percentage < 50){
+  document.getElementById("matchLove").innerHTML = percentage.toFixed(2) + "%";
   window.alert("Hui das schaut nicht gut aus. Ihr passt nur " + percentage.toFixed(2) + "% zueinander. Vielleicht solltest du lieber etwas anderes bestellen.");
-}
-  else{ window.alert("Wow. " + percentage.toFixed(2) + "%. Das ist der Döners fürs Leben!");}
+  }
+  else if(random = "NaN"){}
+  else{
+    document.getElementById("matchLove").innerHTML = percentage.toFixed(2) + "%";
+    window.alert("Wow. " + percentage.toFixed(2) + "%. Das ist der Döners fürs Leben!");}
 }
