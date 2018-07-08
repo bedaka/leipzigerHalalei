@@ -6,7 +6,7 @@ function matchHeart(){
   });
 
   bar.set(0);
-  random = Math.random()*(1.01-0.0)+0.0;
+  random = Math.random()*(1.00-0.0)+0.0;
   bar.animate(random);
 };
 
@@ -19,7 +19,7 @@ function showPercentage(){
   var percentage = 100 * random;
   document.getElementById("matchLove").innerHTML = percentage.toFixed(2) + "%";
   if(percentage < 50){
-  window.alert("Hui das schaut nicht gut aus. Vielleicht solltest du lieber etwas anderes bestellen");
+  window.alert("Hui das schaut nicht gut aus. Ihr passt nur " + percentage.toFixed(2) + "% zueinander. Vielleicht solltest du lieber etwas anderes bestellen.");
 }
-  else{ window.alert("Das ist der Döners fürs Leben!");}
+  else{ window.alert("Wow. " + percentage.toFixed(2) + "%. Das ist der Döners fürs Leben!");}
 }
