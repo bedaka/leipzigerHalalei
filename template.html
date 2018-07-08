@@ -70,14 +70,18 @@
           </div>
 <!-- ********************************* News ***************************-->
             <div id = "news">
-              <h1> News von Twitter and Co. KG </h1>
+              <h1> News via Twitter and Co.</h1>
               <article>
-                Hier kommen tolle News von Twitter in Zusammenhang mit #leipzig #döner #vöner
+                <a class="twitter-timeline"
+                  href="https://twitter.com/LeipzigerH/lists/leipziger-halalei-news?ref_src=twsrc%5Etfw"
+                  data-height = "300">
+                  A Twitter List by Leipziger Halalei</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </article>
             </div>
 <!-- ******************************* Map *****************************-->
             <div id = "map">
-              <h1> Map of Leipzigs Döners </h1>
+              <h1> Map of Leipzig's Döners </h1>
             <div class="scroll-left">
             <div class="inner">
               <img src="./images/spiess100.png">
@@ -119,16 +123,18 @@
             <div id = "matchingKebab">
                 <h1> Matching Kebab </h1>
                 <article>
-                  Bild 1 = Beautiful You, Bild 2 = Beautiful Döner <br>
-                  Bild1 + Bild2 = Big Love Forever (oder vielleicht doch nicht). <br>
-                  Bei unserem Matching Verfahren wird ein komplexer Algorithmus,
+                  <section>Bild 1 = Beautiful You, Bild 2 = Beautiful Döner </section>
+                  <section>Bild1 + Bild2 = Big Love Forever (oder vielleicht doch nicht). </section>
+                  <section>Bei unserem Matching Verfahren wird ein komplexer Algorithmus,
                   anhand deiner Interessen, geistigen Fähigkeiten, Einstellungen,
                   Werte und Facebook-Likes herausfinden, wie gut du und dein
                   Schawarma zusammenpassen.
-                  <br>
+                </section>
+                <section>
                   Also schau dem Herz beim Wachsen zu.
+                </section>
                 </article>
-                <svg id="containerHeart" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+                <svg onmouseover = "showPercentage()" id="containerHeart" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
                   <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
                   <path id="heart-path" fill-opacity="0" stroke-width="3" stroke="#d32918" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
                 </svg>

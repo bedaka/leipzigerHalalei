@@ -28,6 +28,7 @@ header{
     margin-top: 5px;
     text-align: center;
     position: fixed; /* header liegt hinten und verschwindet beim scrollen */
+    z-index: -1;
     top: 0;
     width: 100%;
 }
@@ -204,6 +205,7 @@ footer {
   height:100%;
   width:100%;
 }
+
 /*Animation der kleinen Döner*/
 .scroll-left {
 width: 100%;
