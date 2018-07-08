@@ -175,7 +175,7 @@ footer {
   box-shadow: 0 0.1em 1.5em 0 rgba(0,0,0,0.24), 0 1.5em 2em 0 rgba(0,0,0,0.19);
   background-color: white;
   color: black;
-  border: 0.1em solid #ED6A5A;
+  border: 0.1em solid #d32918;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -186,7 +186,7 @@ footer {
   cursor: pointer;
 }
 #matchLove:hover {
-    background-color: #ED6A5A;
+    background-color: #d32918;
     color: white;
 }
 
