@@ -1,14 +1,5 @@
 /* Globales Stylesheet v.0.1 */
 /* Zum importieren weiterer stylesheets @import "style2.css";  */
-
-@font-face {
-  font-family: 'Nexa Light Regular';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Nexa Light Regular'), url('nexa-light-webfont.woff') format('woff');
-  unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 body{
   background-color: grey;
   font-size: 100%;
@@ -138,16 +129,6 @@ footer {
 
 #navButtons{
   font: 14px;
-}
-
-.slideshow{
-  max-width: 500px;
-
-}
-.mySlides{
-  display: none;
-  width: 100%;
-  max-height: 300px;
 }
 
 .lineO{
