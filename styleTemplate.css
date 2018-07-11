@@ -43,7 +43,6 @@ main{
   background: url("./images/halftone-yellow.png");
   background-repeat: repeat;
   text-align: center;
-  /* padding: 100px 250px 50px 250px; */
   padding: 100px 13% 50px 13%;
 }
 
@@ -85,7 +84,7 @@ footer {
  .flex-container > div {
   background-color: rgb(255, 255, 255, 1);
   margin: 10px;
-  padding: 10px 40px 10px 40px;
+  padding: 20px 40px 20px 40px;
 }
 
 .main-nav{
@@ -106,6 +105,7 @@ footer {
   display: inline-block;
   text-decoration: none;
   color: black;
+  
 }
 
 .icons{
@@ -120,6 +120,11 @@ footer {
   .main-nav{
     height: 140px;
   }
+  .main-nav > a{
+    min-width: 33%;
+  }
+
+
 }
 
 #logo{
