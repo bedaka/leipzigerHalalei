@@ -43,7 +43,8 @@ main{
   background: url("./images/halftone-yellow.png");
   background-repeat: repeat;
   text-align: center;
-  padding: 100px 250px 50px 250px;
+  /* padding: 100px 250px 50px 250px; */
+  padding: 100px 13% 50px 13%;
 }
 
 article {
