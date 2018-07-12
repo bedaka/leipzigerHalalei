@@ -28,7 +28,11 @@ class Ingredient extends ex.Actor{
 
       ex.Actor.prototype.update.apply(this, [engine, delta]);
 
-      if(this.y > game.drawHeight + 100) this.kill();
+      if(this.y > game.drawHeight + 30){
+        this.kill();
+        game.emit("lifelost", new ex.GameEvent<any>());
+      }
+
     }
 
 }
